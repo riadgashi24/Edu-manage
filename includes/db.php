@@ -2,14 +2,14 @@
 $host = 'localhost';
 $db   = 'edumanage';
 $user = 'root';
-$pass = ''; // shto password nëse ke
+$pass = ''; 
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, // për gabime të qarta
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       // merr të dhënat si array associative
-    PDO::ATTR_EMULATE_PREPARES   => false,                  // për siguri më të lartë
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, 
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       
+    PDO::ATTR_EMULATE_PREPARES   => false,                  
 ];
 
 try {

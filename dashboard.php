@@ -2,13 +2,11 @@
 session_start();
 require 'includes/db.php';
 
-// Kontrollo nëse përdoruesi është i kyçur
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
 
-// Merr projektet e përdoruesit
 $stmt = $pdo->prepare("SELECT * FROM projects WHERE user_id = ? ORDER BY due_date ASC");
 $stmt->execute([$_SESSION['user_id']]);
 $projects = $stmt->fetchAll();
